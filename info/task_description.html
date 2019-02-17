@@ -1,0 +1,62 @@
+
+<p>
+Your task is to simulate a flood damage.
+</p>
+
+<p>
+You are given a cross-section diagram (a string).
+It represents slopes and flatlands by '/', '\' and '_' respectively, For example, the region of the following example is given by a string "/\\///\_/\/\\\\/_/\\///__\\\_\\/_\/_/".
+</p>
+<p>
+Assume that rain is falling endlessly in the region and the water overflowing from the region is falling in the sea at the both sides.
+The following example: the rain will create floods which have areas of 4, 2, 1, 19 and 9 respectively.
+</p>
+<p>
+You should return a list of the number of floods. For each flood from the left side of the cross-section diagram. If there is no flood, return [].
+</p>
+<img src='{{MEDIA}}example_01.png' title='example'>
+
+
+<div class="for_info_only">
+    <p><strong>Example:</strong></p>
+{% if interpreter.slug == "js-node" %}
+<pre class="brush: javascript">
+</pre>
+{% else %}
+<pre class="brush: python" style="font-family:'Courier New',Courier;">
+flood_area(r'\\//') == [4]
+flood_area(r'/\\///\_/\/\\\\/_/\\///__\\\_\\/_\/_/') == [4, 2, 1, 19, 9]
+flood_area(r'_/_\_') == []
+</pre>
+{% endif %}
+
+</div>
+
+<p><strong>Input: </strong>
+{% if interpreter.slug == "js-node" %}
+{% else %}
+a cross-section diagram (a string).
+{% endif %}
+</p>
+
+<p><strong>Output: </strong>
+the number of floods (a list of integer).
+</p>
+
+
+<!--
+<p>
+<strong>How it is used:</strong><br>
+</p>
+-->
+
+<p>
+<strong>Precondition:</strong><br>
+<ul>
+    <li>1 &le; len(diagram) &le; 500</li>
+</ul>
+</p>
+
+<p><i>The mission was taken from <a href="http://www.scs.ryerson.ca/~ikokkari/">AIZU ONLINE JUDGE(ALDS1_3_D: Areas on the Cross-Section Diagram).</a></i></p>
+
+
