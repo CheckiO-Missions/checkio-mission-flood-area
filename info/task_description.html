@@ -12,7 +12,8 @@ Assume that rain is falling endlessly in the region and the water overflowing fr
 The following example: the rain will create floods which have areas of 4, 2, 1, 19 and 9 respectively.
 </p>
 <p>
-You should return a list of the number of floods. For each flood from the left side of the cross-section diagram. If there is no flood, return [].
+You should return a list (or an iterable) of the number of floods. For each flood from the left side of the cross-section diagram.
+If there is no flood, return [] (or an empty iterable).
 </p>
 <img src='{{MEDIA}}example_01.png' title='example'>
 
@@ -24,9 +25,9 @@ You should return a list of the number of floods. For each flood from the left s
 </pre>
 {% else %}
 <pre class="brush: python" style="font-family:'Courier New',Courier;">
-flood_area(r'\\//') == [4]
-flood_area(r'/\\///\_/\/\\\\/_/\\///__\\\_\\/_\/_/') == [4, 2, 1, 19, 9]
-flood_area(r'_/_\_') == []
+list(flood_area(r'\\//')) == [4]
+list(flood_area(r'/\\///\_/\/\\\\/_/\\///__\\\_\\/_\/_/')) == [4, 2, 1, 19, 9]
+list(flood_area(r'_/_\_')) == []
 </pre>
 {% endif %}
 
@@ -40,7 +41,7 @@ a cross-section diagram (a string).
 </p>
 
 <p><strong>Output: </strong>
-the number of floods (a list of integer).
+the number of floods (a list/iterable of integers).
 </p>
 
 
