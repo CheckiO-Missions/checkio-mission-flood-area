@@ -32,6 +32,10 @@ from checkio.referees.io import CheckiOReferee
 from checkio.referees import cover_codes
 from tests import TESTS
 
+cover_iterable = '''
+def cover(func, args):
+    return list(func(*args))
+'''
 
 api.add_listener(
     ON_CONNECT,
@@ -42,7 +46,7 @@ api.add_listener(
             "js": "floodArea"
         },
         cover_code={
-            'python-3': cover_codes.unwrap_args,
+            'python-3': cover_iterable,
             'js-node': cover_codes.js_unwrap_args
         },
     ).on_ready)
