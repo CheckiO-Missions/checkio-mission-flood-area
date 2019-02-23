@@ -6,7 +6,37 @@ Each test is dict with
     "answer" -- your right answer
     "explanation" -- not necessary key, it's using for additional info in animation.
 """
+from typing import Iterable
+from collections import defaultdict
+from random import randint
+BS, SL = '\\', '/'
+
+
+def flood_area(diagram: str) -> Iterable[int]:
+    flood = defaultdict(int)
+    stack = []
+    for cur, terrain in enumerate(diagram):
+        if terrain == BS:
+            stack.append(cur)
+        elif terrain == SL and stack:
+            first = stack.pop()
+            for (f_first, f_last) in list(flood):
+                if first < f_first < cur:
+                    flood[(first, cur)] += flood.pop((f_first, f_last))
+            flood[(first, cur)] += cur - first
+    return flood
+
+randoms = []
+for i in (10, 20, 40, 60, 80):
+    terrain = ''.join(r'/\_'[randint(0, 2)] for _ in range(i))
+    answer = flood_area(terrain)
+    randoms.append({
+            'input': [terrain],
+            "answer": list(answer.values()),
+            "explanation": list(answer.keys()),})
+
 TESTS = {
+    "Randoms": randoms,
     "Basics": [
         {
             "input": [r'\\//'],
@@ -227,6 +257,5 @@ TESTS = {
             "answer": [1, 17, 1, 4, 1, 1, 1, 1, 1, 1, 1, 15, 4, 1, 1, 1, 27, 1, 1, 1, 1, 4, 1, 1, 4, 1, 1, 9, 12, 1, 1, 1, 1, 1, 7, 1, 1, 1, 1, 1, 4, 1, 1, 10, 1, 1, 1, 4, 1, 1, 1, 1, 18, 7, 1, 1, 1, 38, 4, 9, 1, 1, 1, 17, 9, 26, 1, 61, 10, 4, 1, 10, 4, 1, 1, 1, 15, 1, 1, 1, 1],
             "explanation": [(0, 1), (7, 16), (17, 18), (32, 33), (25, 28), (29, 30), (35, 36), (42, 43), (47, 48), (50, 51), (53, 54), (73, 76), (77, 78), (61, 70), (86, 87), (88, 89), (90, 103), (108, 109), (115, 116), (117, 118), (123, 124), (139, 140), (126, 129), (130, 131), (132, 133), (134, 137), (149, 150), (174, 175), (165, 172), (158, 163), (177, 178), (179, 180), (184, 185), (186, 187), (195, 200), (207, 208), (210, 211), (214, 215), (216, 217), (219, 220), (223, 226), (229, 230), (234, 235), (242, 249), (250, 251), (255, 256), (258, 259), (267, 268), (262, 265), (273, 274), (284, 285), (286, 287), (288, 299), (303, 308), (309, 310), (311, 312), (315, 316), (317, 332), (333, 336), (345, 346), (347, 348), (338, 343), (351, 352), (355, 364), (378, 389), (390, 391), (392, 409), (410, 417), (370, 375), (422, 425), (427, 428), (435, 442), (449, 452), (457, 458), (470, 471), (476, 477), (493, 494), (495, 496), (497, 498), (479, 488), (489, 490)],
         },
-
     ],
 }
