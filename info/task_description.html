@@ -1,19 +1,18 @@
-
 <p>
 Your task is to simulate a flood damage.
 </p>
 
 <p>
 You are given a cross-section diagram (a string).
-It represents slopes and flatlands by '/', '\' and '_' respectively, For example, the region of the following example is given by a string "/\\///\_/\/\\\\/_/\\///__\\\_\\/_\/_/".
+It represents slopes and flatlands by '/', '\' and '_' respectively. For example, the region of the following picture is shown by a string "/\\///\_/\/\\\\/_/\\///__\\\_\\/_\/_/".
 </p>
 <p>
-Assume that rain is falling endlessly in the region and the water overflowing from the region is falling in the sea at the both sides.
-The following example: the rain will create floods which have areas of 4, 2, 1, 19 and 9 respectively.
+Assume that the rain is falling endlessly and the water overflowing from the region is falling into the sea from both sides.
+In the following example the rain will create floods in 4, 2, 1, 19 and 9 areas respectively.
 </p>
 <p>
-You should return a list (or an iterable) of the number of floods. For each flood from the left side of the cross-section diagram.
-If there is no flood, return [] (or an empty iterable).
+You should return a list (or an iterable) of the numbers of floods from the left side of the cross-section diagram.
+If there aren’t any  floods, return [] (or an empty iterable).
 </p>
 <img src='{{MEDIA}}example_01.png' title='example'>
 
@@ -36,12 +35,12 @@ list(flood_area(r'_/_\_')) == []
 <p><strong>Input: </strong>
 {% if interpreter.slug == "js-node" %}
 {% else %}
-a cross-section diagram (a string).
+A cross-section diagram (a string).
 {% endif %}
 </p>
 
 <p><strong>Output: </strong>
-the number of floods (a list/iterable of integers).
+The numbers of floods (a list/iterable of integers).
 </p>
 
 
@@ -59,5 +58,3 @@ the number of floods (a list/iterable of integers).
 </p>
 
 <p><i>The mission was taken from <a href="http://judge.u-aizu.ac.jp/onlinejudge/description.jsp?id=ALDS1_3_D">AIZU ONLINE JUDGE(ALDS1_3_D: Areas on the Cross-Section Diagram).</a></i></p>
-
-
