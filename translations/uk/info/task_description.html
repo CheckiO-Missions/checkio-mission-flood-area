@@ -1,0 +1,42 @@
+<p>
+Твоє завдання - порахувати шкоду від повені.
+</p>
+
+<p>
+Тобі дано схему поперечного розрізу (рядок).
+Вона показує схили і рівнини з допомогою <b class="code">'/'</b>, <b class="code">'\'</b> і <b class="code">'_'</b> відповідно. Наприклад, регіон на наступній картинці показаний рядком <b class="code">"/\\///\_/\/\\\\/_/\\///__\\\_\\/_\/_/"</b>.
+</p>
+<p>
+Припустимо, що дощ йде нескінченно, а вода, що переливається з регіону, падає в море з обох боків.
+На запропонованому прикладі дощ створить повінь площею <b class="code">4, 2, 1, 19</b> і <b class="code">9</b> відповідно.
+</p>
+<p>
+Твоя функція повинна повернути {% if is_js %}масив{% else %}список або інший ітеративний об'єкт (кортеж, ітератор, генератор){% endif %} площ повені зліва-направо на поперечній діаграмі.
+Якщо нічого не затоплено, поверни <b class="code">[]</b> (або порожній ітеративний об'єкт).
+</p>
+
+<p style="text-align: center;">
+    <img  title="example" src='{{MEDIA}}example_01.png' alt="example" style="max-height: 300px"/>
+</p>
+
+<div class="for_info_only">
+    <p><strong>Приклади:</strong></p>
+    <pre class="brush: {% if is_js %}javascript{% else %}python{% endif %}">{{init_code_tmpl}}</pre>
+</div>
+
+<p><strong>Вхідні дані:</strong> Схема поперечного розрізу (рядок).</p>
+
+<p><strong>Output:</strong> Площі підтоплення як {% if is_js %}масив{% else %}список або інший ітеративний об'єкт (кортеж, ітератор, генератор){% endif %} цілих чисел.</p>
+
+
+<!--
+<p>
+<strong>How it is used:</strong><br>
+</p>
+-->
+
+<p>
+<strong>Передумова:</strong><i>1 &le; len(diagram) &le; 500</i>
+</p>
+
+<p><i>Ця місія була взята з <a target="_blank" href="http://judge.u-aizu.ac.jp/onlinejudge/description.jsp?id=ALDS1_3_D">AIZU ONLINE JUDGE(ALDS1_3_D: Areas on the Cross-Section Diagram).</a></i></p>

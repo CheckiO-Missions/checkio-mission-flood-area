@@ -6,7 +6,7 @@ Each test is dict with
     "answer" -- your right answer
     "explanation" -- not necessary key, it's using for additional info in animation.
 """
-from typing import Iterable
+from collections.abc import Iterable
 from collections import defaultdict
 from random import randint
 BS, SL = '\\', '/'
