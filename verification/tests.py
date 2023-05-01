@@ -83,7 +83,7 @@ TESTS = {
         },
         # 12
         {
-            "input": ['\\'],
+            "input": [r'\\'],
             "answer": [],
             "explanation": [[]],
         },
